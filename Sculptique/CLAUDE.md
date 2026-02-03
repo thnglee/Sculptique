@@ -1,0 +1,1 @@
+/Users/thanglee/PATI-test/Sculptique/AGENTS.md
