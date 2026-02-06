@@ -142,8 +142,8 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrows: !0,
         asNavFor: ".main_product-image-carousel_thumbs",
-        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin_1.png?v=1752126281'/></button>",
-        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin.png?v=1752126281'/></button>"
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='assets/imgi_12_iconamoon_arrow-up-2-thin_1.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='assets/imgi_21_iconamoon_arrow-up-2-thin.png'/></button>"
     }), $(".main_product-image-carousel_thumbs").slick({
         infinite: !0,
         slidesToShow: 4,
@@ -157,8 +157,8 @@ $(document).ready(function () {
         slidesToScroll: 1,
         arrows: !0,
         dots: !0,
-        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin_1.png?v=1752126281'/></button>",
-        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin.png?v=1752126281'/></button>",
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='assets/imgi_12_iconamoon_arrow-up-2-thin_1.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='assets/imgi_21_iconamoon_arrow-up-2-thin.png'/></button>",
         responsive: [{
             breakpoint: 677,
             settings: {
@@ -173,8 +173,8 @@ $(document).ready(function () {
         arrows: !0,
         dots: !0,
         allowTouchMove: !0,
-        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin_1.png?v=1752126281'/></button>",
-        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='https://cdn.shopify.com/s/files/1/0917/5649/5191/files/iconamoon_arrow-up-2-thin.png?v=1752126281'/></button>",
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img class='left_arrow' src='assets/imgi_12_iconamoon_arrow-up-2-thin_1.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img class='right_arrow' src='assets/imgi_21_iconamoon_arrow-up-2-thin.png'/></button>",
         responsive: [{
             breakpoint: 677,
             settings: {
