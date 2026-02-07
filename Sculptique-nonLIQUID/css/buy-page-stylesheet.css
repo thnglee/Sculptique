@@ -213,10 +213,15 @@
 
 .product-selector_atc,
 .product-selector_atc_champs {
+    /*we gotta currently comment out this entire part I've just added to compare*/
+
+
     /*adding the right font family to match the exact design*/
+    /*
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.6px;
     box-sizing: border-box;
+    */
     /*end of my fix*/
     /*now that the problem going on the ATC button is partially resolved*/
 

@@ -1,6 +1,8 @@
-*, *::before, *::after {
+
+/* *, *::before, *::after {
     box-sizing: border-box;
-}
+} */
+/*above is the fix for overflowing issue, currently commented out for comparison*/
 /*added the above code to prevent overflowing issue*/
 
 .shopify-section p {
