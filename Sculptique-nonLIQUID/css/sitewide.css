@@ -1,3 +1,8 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*added the above code to prevent overflowing issue*/
+
 .shopify-section p {
     font-family: Nunito
 }
