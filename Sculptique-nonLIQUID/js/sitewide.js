@@ -1,78 +1,10 @@
 $(document).ready(function () {
+    // Note: Shopify cart API calls have been removed as they don't work in static HTML
+    // These buttons are non-functional without a backend
     $(".custom_atc_button").click(function () {
-        var currentId = $(this).attr("data-id"),
-            mode = $(this).attr("data"),
-            sellingPlanId = $(this).attr("data-sub-id"),
-            quantityCur = $(this).closest(".formCont").find(".gf_pq_qty").val();
-        console.log(mode, "MODE"), mode == "sub" ? $.ajax({
-            type: "POST",
-            url: "/cart/clear.js",
-            success: function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/cart/add.js",
-                    data: {
-                        id: currentId,
-                        quantity: quantityCur,
-                        selling_plan: sellingPlanId
-                    },
-                    success: function () {
-                        window.location.href = "/checkout"
-                    }
-                })
-            }
-        }) : $.ajax({
-            type: "POST",
-            url: "/cart/clear.js",
-            success: function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/cart/add.js",
-                    data: {
-                        id: currentId,
-                        quantity: quantityCur
-                    },
-                    success: function () {
-                        window.location.href = "/checkout"
-                    }
-                })
-            }
-        })
+        console.log("Add to cart clicked - Shopify cart API not available in static HTML");
     }), $(".custom_atc_button_cart").click(function () {
-        var currentId = $(this).attr("data-id"),
-            mode = $(this).attr("data"),
-            sellingPlanId = $(this).attr("data-sub-id"),
-            quantityCur = $(this).closest(".formCont").find(".gf_pq_qty").val();
-        console.log(mode, "MODE"), mode == "sub" ? $.ajax({
-            type: "POST",
-            url: "/cart/clear.js",
-            success: function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/cart/add.js",
-                    data: {
-                        id: currentId,
-                        quantity: quantityCur,
-                        selling_plan: sellingPlanId
-                    },
-                    success: function () { }
-                })
-            }
-        }) : $.ajax({
-            type: "POST",
-            url: "/cart/clear.js",
-            success: function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/cart/add.js",
-                    data: {
-                        id: currentId,
-                        quantity: quantityCur
-                    },
-                    success: function () { }
-                })
-            }
-        })
+        console.log("Add to cart clicked - Shopify cart API not available in static HTML");
     }), $(".product_tab-block").click(function () {
         $(this).toggleClass("active"), $(this).find(".product_tab-content").slideToggle()
     }), $(".main_product-btn").click(function () {
