@@ -147,62 +147,8 @@ function fetchConfig(type = "json") {
         }
     }
 }
-typeof window.Shopify > "u" && (window.Shopify = {}), Shopify.bind = function (fn, scope) {
-    return function () {
-        return fn.apply(scope, arguments)
-    }
-}, Shopify.setSelectorByValue = function (selector, value) {
-    for (var i = 0, count = selector.options.length; i < count; i++) {
-        var option = selector.options[i];
-        if (value == option.value || value == option.innerHTML) return selector.selectedIndex = i, i
-    }
-}, Shopify.addListener = function (target, eventName, callback) {
-    target.addEventListener ? target.addEventListener(eventName, callback, !1) : target.attachEvent("on" + eventName, callback)
-}, Shopify.postLink = function (path, options) {
-    options = options || {};
-    var method = options.method || "post",
-        params = options.parameters || {},
-        form = document.createElement("form");
-    form.setAttribute("method", method), form.setAttribute("action", path);
-    for (var key in params) {
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden"), hiddenField.setAttribute("name", key), hiddenField.setAttribute("value", params[key]), form.appendChild(hiddenField)
-    }
-    document.body.appendChild(form), form.submit(), document.body.removeChild(form)
-}, Shopify.CountryProvinceSelector = function (country_domid, province_domid, options) {
-    this.countryEl = document.getElementById(country_domid), this.provinceEl = document.getElementById(province_domid), this.provinceContainer = document.getElementById(options.hideElement || province_domid), Shopify.addListener(this.countryEl, "change", Shopify.bind(this.countryHandler, this)), this.initCountry(), this.initProvince()
-}, Shopify.CountryProvinceSelector.prototype = {
-    initCountry: function () {
-        var value = this.countryEl.getAttribute("data-default");
-        Shopify.setSelectorByValue(this.countryEl, value), this.countryHandler()
-    },
-    initProvince: function () {
-        var value = this.provinceEl.getAttribute("data-default");
-        value && this.provinceEl.options.length > 0 && Shopify.setSelectorByValue(this.provinceEl, value)
-    },
-    countryHandler: function (e) {
-        var opt = this.countryEl.options[this.countryEl.selectedIndex],
-            raw = opt.getAttribute("data-provinces"),
-            provinces = JSON.parse(raw);
-        if (this.clearOptions(this.provinceEl), provinces && provinces.length == 0) this.provinceContainer.style.display = "none";
-        else {
-            for (var i = 0; i < provinces.length; i++) {
-                var opt = document.createElement("option");
-                opt.value = provinces[i][0], opt.innerHTML = provinces[i][1], this.provinceEl.appendChild(opt)
-            }
-            this.provinceContainer.style.display = ""
-        }
-    },
-    clearOptions: function (selector) {
-        for (; selector.firstChild;) selector.removeChild(selector.firstChild)
-    },
-    setOptions: function (selector, values) {
-        for (var i = 0, count = values.length; i < values.length; i++) {
-            var opt = document.createElement("option");
-            opt.value = values[i], opt.innerHTML = values[i], selector.appendChild(opt)
-        }
-    }
-};
+// Note: Shopify global object and utilities removed - not functional in static HTML
+
 class MenuDrawer extends HTMLElement {
     constructor() {
         super(), this.mainDetailsToggle = this.querySelector("details"), this.addEventListener("keyup", this.onKeyUp.bind(this)), this.addEventListener("focusout", this.onFocusOut.bind(this)), this.bindEvents()
@@ -618,31 +564,5 @@ class BulkAdd extends HTMLElement {
     }
 }
 customElements.get("bulk-add") || customElements.define("bulk-add", BulkAdd);
-class CartPerformance {
-    static #metric_prefix = "cart-performance";
-    static createStartingMarker(benchmarkName) {
-        const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
-        return performance.mark(`${metricName}:start`)
-    }
-    static measureFromEvent(benchmarkName, event) {
-        const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`,
-            startMarker = performance.mark(`${metricName}:start`, {
-                startTime: event.timeStamp
-            }),
-            endMarker = performance.mark(`${metricName}:end`);
-        performance.measure(benchmarkName, `${metricName}:start`, `${metricName}:end`)
-    }
-    static measureFromMarker(benchmarkName, startMarker) {
-        const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`,
-            endMarker = performance.mark(`${metricName}:end`);
-        performance.measure(benchmarkName, startMarker.name, `${metricName}:end`)
-    }
-    static measure(benchmarkName, callback) {
-        const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`,
-            startMarker = performance.mark(`${metricName}:start`);
-        callback();
-        const endMarker = performance.mark(`${metricName}:end`);
-        performance.measure(benchmarkName, `${metricName}:start`, `${metricName}:end`)
-    }
-}
+// Note: CartPerformance class removed - not functional without Shopify cart
 //# sourceMappingURL=/cdn/shop/t/2/assets/global.js.map?v=184345515105158409801752053103
